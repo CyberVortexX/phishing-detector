@@ -16,9 +16,14 @@ app.add_middleware(
 )
 
 # Load models
-model = joblib.load("model/xgb_model.pkl")
-vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
-scaler = joblib.load("model/struct_scaler.pkl")
+from pathlib import Path
+import joblib
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+model = joblib.load(BASE_DIR / "model/model.pkl")
+vectorizer = joblib.load(BASE_DIR / "model/vectorizer.pkl")
+scaler = joblib.load(BASE_DIR / "model/scaler.pkl")
 
 
 @app.get("/")

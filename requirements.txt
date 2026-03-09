@@ -1,8 +1,7 @@
 fastapi
 uvicorn
+numpy==1.26.4
 pandas
-numpy
-scikit-learn
-xgboost
-scipy
+scikit-learn==1.4.2
 joblib
+xgboost

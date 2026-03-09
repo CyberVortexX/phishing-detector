@@ -16,7 +16,7 @@ venv/
 Thumbs.db
 
 # Model artifacts
-*.pkl
+
 *.joblib
 
 # Logs
