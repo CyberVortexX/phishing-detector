@@ -21,10 +21,9 @@ import joblib
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-model = joblib.load(BASE_DIR / "model/model.pkl")
-vectorizer = joblib.load(BASE_DIR / "model/vectorizer.pkl")
-scaler = joblib.load(BASE_DIR / "model/scaler.pkl")
-
+model = joblib.load(BASE_DIR / "model/xgb_model.pkl")
+vectorizer = joblib.load(BASE_DIR / "model/tfidf_vectorizer.pkl")
+scaler = joblib.load(BASE_DIR / "model/struct_scaler.pkl")
 
 @app.get("/")
 def home():
