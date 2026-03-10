@@ -11,13 +11,19 @@ document.querySelector(".scan-btn").addEventListener("click", async () => {
         url = "http://" + url;
     }
 
+    try {
     const response = await fetch("https://phishing-detector-s0nb.onrender.com/predict", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: url })
     });
+
+    const data = await response.json();
+    console.log(data);
+
+    } catch (error) {
+    console.error("API error:", error);
+    }
 
     const data = await response.json();
 
